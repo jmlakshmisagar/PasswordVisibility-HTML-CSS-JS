@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Password</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="eye-open.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            width: 95vw;
+            height: 95vh;
+            background-color: #455d7a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page {
+            width: 400px;
+            background: #e7eaf6;
+            border-radius: 20px;
+            padding: 20px 30px;
+            border: 2px solid;
+        }
+
+        .inputText {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .inputText input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #04070b;
+            font-size: 20px;
+        }
+
+        .inputText img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="inputText">
+            <input type="password" id="password" placeholder="Type Password">
+            <img src="eye-close.png" width="40px" id="open">
+        </div>
+    </div>
+    <script>
+        let PassWordVisibility = document.getElementById("password");
+        let visiblity = document.getElementById("open");
+        visiblity.onclick = function () {
+            if (PassWordVisibility.type == "password") {
+                PassWordVisibility.type = "text";
+                visiblity.src = "eye-open.png"
+            } else {
+                PassWordVisibility.type = "password";
+                visiblity.src = "eye-close.png"
+            }
+        }
+    </script>
+</body>
+
+</html>
